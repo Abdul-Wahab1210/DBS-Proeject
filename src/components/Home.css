@@ -1,0 +1,46 @@
+/* Navbar.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('C:\\Users\\Ghouri\\Desktop\\DBS Project\\react-app\\src\\images\\OIG.jfif');
+    /* other styles */
+  }
+  
+  .navbar {
+    background-color: transparent;
+   }
+  
+  .navbar-container {
+    background-color: transparent;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  .vertical-navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 100px;
+  }
+  
+  .nav-button {
+    color: white;
+    max-width: fit-content;
+    border-radius: 12px;
+    background-color: #000000;
+    border: none;
+    padding: 8px;
+    margin: 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover {
+    background-color: #0729b3;
+  }
+  

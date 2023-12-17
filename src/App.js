@@ -1,19 +1,18 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import ClientHome from './components/ClientHome';
+import Home from './components/Home';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route path='/'exact></Route>
-        </Routes>
-      </Router>
-    </>
-      
+    <Router>
+      <Routes>        
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<ClientHome/>} />
+      </Routes>
+    </Router>
   );
 }
 
