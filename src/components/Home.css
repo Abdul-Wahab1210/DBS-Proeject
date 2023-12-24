@@ -1,94 +1,105 @@
-  body {
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-position: center center; /* Adjust as needed */
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      /* other styles */
-    }
-    
-    .navbar {
-      background-color: rgb(188, 188, 188);
-      height: 10vh;
-    }
-    
-      .navbar-container {
-      color:blue;
-      padding: 10px;
-      font-size: large;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* other styles */
+}
 
-    
-    
-    .vertical-navbar {
-      display: flex;
-      flex-direction: row;
-      background-color: black;
-      width: auto;
-      height: 10vh;
-      padding: 10px;
-      justify-content:center;
-      align-items: center;
-    }
-    
-    .nav-button {
-      color: white;
-      max-width: fit-content;
-      border-radius: 12px;
-      background-color: #000000;
-      border: none;
-      padding: 8px;
-      margin: 20px;
-      font-size: 18px;
-      cursor: pointer;
-      border: 1px solid rgb(188, 188, 188);
-    }
-    
-    .nav-button:hover {
-      background-color: #0729b3;
-    }
-    
-    .login {
-      display: flex;
-      flex-direction: column;
-      max-width: 100vw;
-      height: 80vh;
-      background-color: aqua;
-      align-items: start;
-      justify-content: center;
-      background-image: url("C:\\Users\\Ghouri\\Desktop\\DBS-Project\\src\\images\\Bank2.webp");
-      background-size: cover; 
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
+.navbar {
+  background-color: rgb(188, 188, 188);
+  height: 10vh;
+}
 
-    .login button{
-      padding: 10px;
-      margin: 20px;
-      font: bold;    
-      font-size: larger;
-      background-color: transparent;
-    }
+.navbar-container {
+  color: blue;
+  padding: 10px;
+  font-size: large;
+}
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(94, 94, 94, 0.934); /* Adjust the transparency here */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .login-form {
-      background: rgb(31, 125, 144);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    /* Add more styles as needed */
-    
+.vertical-navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: auto;
+  height: 10vh;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  color: white;
+  max-width: fit-content;
+  border-radius: 12px;
+  background-color: #000000;
+  border: none;
+  padding: 8px;
+  margin: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid rgb(188, 188, 188);
+}
+
+.nav-button:hover {
+  background-color: #0729b3;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  height: 80vh;
+  background-color: aqua;
+  align-items: start;
+  justify-content: center;
+  background-image: url("C:\\Users\\Ghouri\\Desktop\\DBS-Project\\src\\images\\Bank2.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.login button {
+  padding: 10px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: larger;
+  background-color: transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(94, 94, 94, 0.934);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background: rgb(31, 125, 144);
+  width: 25vw;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  /* Additional styles for columnar layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form label {
+  margin-bottom: 8px;
+}
+
+.login-form input {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
