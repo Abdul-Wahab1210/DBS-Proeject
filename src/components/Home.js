@@ -11,11 +11,11 @@ function Home() {
   const [accountId, setAccountId] = useState('');
   const [password, setPassword] = useState('');
   const [registrationData, setRegistrationData] = useState({
-    username: '',
+    username: '',    
+    pass: '',
     email: '',
     firstName: '',
     lastName: '',
-    pass: '',
   });
 
   const handleClientLoginClick = () => {
@@ -28,10 +28,14 @@ function Home() {
 
   const handleClientModalClose = () => {
     setShowClientLoginForm(false);
+    setAccountId('');
+    setPassword('');
   };
 
   const handleEmployeeModalClose = () => {
     setShowEmployeeLoginForm(false);
+    setAccountId('');
+    setPassword('');
   };
 
   const handleAccountNumberChange = (event) => {
@@ -44,11 +48,15 @@ function Home() {
 
   const handleClientLoginFormSubmit = (event) => {
     event.preventDefault();
+    setAccountId('');
+    setPassword('');  
     navigate('/ClientHome', { state: { accountId, password } });
   };
 
   const handleEmployeeLoginFormSubmit = (event) => {
     event.preventDefault();
+    setAccountId('');
+    setPassword('');
     // Add logic for handling employee login form submission
     console.log('Employee Login Data:', { accountId, password });
   };
@@ -56,6 +64,15 @@ function Home() {
   const handleRegistrationModalClose = () => {
     setShowRegistrationForm(false);
     setShowClientLoginForm(true);
+    setAccountId('');
+    setPassword('');
+    setRegistrationData({
+      username: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      pass: '',
+    });
   };
 
   const handleRegistrationFieldChange = (event) => {
@@ -70,6 +87,13 @@ function Home() {
 
   const handleRegistrationFormSubmit = (event) => {
     event.preventDefault();
+    setRegistrationData({
+      username: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      pass: '',
+    }); 
     // Add logic for handling registration form submission
     console.log('Registration Data:', registrationData);
   };
@@ -135,6 +159,15 @@ function Home() {
                 id="username"
                 name="username"
                 value={registrationData.username}
+                onChange={handleRegistrationFieldChange}
+              />
+
+              <label htmlFor="pass">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="pass"
+                value={registrationData.pass}
                 onChange={handleRegistrationFieldChange}
               />
 
