@@ -1,19 +1,19 @@
 // ClientHome.js
 import React from 'react';
 import './ClientHome.css';
-import { Link, useNavigate } from 'react-router-dom';
-import Home from './Home';
+import { Link, useLocation } from 'react-router-dom';
+import Header from './Header';
  
 
 function ClientHome() {
+  const location = useLocation();
+  const { accountId, password } = location.state || {};
+
   return (
     <div>
-      <header className="App-header">
-        <h1>BANKEEZ<i className='fab fa-typo3' /></h1>
-      </header>
-      <nav>
-        <Link to= '/'>        <button >Button 1</button>    </Link>
-    
+      <Header />
+      <nav className='navbar-container'>
+        <button>Button 1</button>
         <button>Button 2</button>
         <button>Button 3</button>
         <button>Button 4</button>

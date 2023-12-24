@@ -5,34 +5,8 @@ body {
     background-color: #f2f2f2;
   }
 
-
-  
-  .App-header {
-    color: black;
-    width: max-content;
-    text-align: left;
-    transform: rotate(-15deg);
-  }
-  
-  nav {
+  .navbar-containter {
     display: flex;
+    background-color: black;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px;
   }
-  
-  button {
-    color: #fff;
-    background-color: #555;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #777;
-  }
-  

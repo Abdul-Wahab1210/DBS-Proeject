@@ -5,18 +5,6 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* other styles */
-}
-
-.navbar {
-  background-color: rgb(188, 188, 188);
-  height: 10vh;
-}
-
-.navbar-container {
-  color: blue;
-  padding: 10px;
-  font-size: large;
 }
 
 .vertical-navbar {
@@ -67,6 +55,13 @@ body {
   font-weight: bold;
   font-size: larger;
   background-color: transparent;
+  border-radius: 12px;
+  border: none;
+  color: white;
+}
+
+.login button:hover {
+  background-color: #0729b3;
 }
 
 .overlay {
@@ -87,8 +82,6 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-  /* Additional styles for columnar layout */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,4 +95,35 @@ body {
   width: 90%; 
   padding: 8px;
   margin-bottom: 16px;
+}
+
+.login-form button {
+  color: black;
+  margin-right: 10px;
+}
+
+.reg-form {
+  background: rgb(31, 125, 144);
+  width: 25vw;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reg-form label {
+  margin-bottom: 8px;
+}
+
+.reg-form input {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.reg-form button {
+  color: black;
+  margin-right: 10px;
 }
