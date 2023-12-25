@@ -46,8 +46,8 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 10px;
-  background-color: #4785b846;
   flex: 1;
+  background-color: rgb(103, 126, 146);
 }
 
 .transaction-log-table {
