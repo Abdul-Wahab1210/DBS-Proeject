@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -32,3 +32,75 @@ body {
   .EHnav-button:hover {
     background-color: #0729b3;
   }
+
+
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .EHcontainer {
+    display: flex;
+    height: 90vh; /* Adjust as needed */
+    transition: max-width 0.5s ease;
+  }
+  
+  .EHvertical-navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 10px;
+    justify-content: top;
+    align-items: center;
+    max-width: fit-content;
+  }
+  
+  .EHnav-button {
+    color: white;
+    border-radius: 12px;
+    background-color: #000000;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .EHnav-button:hover {
+    background-color: #0729b3;
+  }
+  
+  .EHcontent-container {
+    padding: 10px;
+    background-color: #4785b846;
+    flex: 1;
+  }
+  
+  .EHcontent {
+    display: inline-flex;
+    flex: 1;
+  }
+  

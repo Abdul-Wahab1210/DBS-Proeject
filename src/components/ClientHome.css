@@ -3,6 +3,13 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.CHcontainer {
+  display: flex;
+  flex: 1;
 }
 
 .CHvertical-navbar {
@@ -10,10 +17,10 @@ body {
   flex-direction: column;
   background-color: black;
   padding: 10px;
-  justify-content: top;
+  justify-content: flex-start;
   align-items: center;
   max-width: fit-content;
-  height:90vh;
+  height: 90vh;
   transition: max-width 0.5s ease;
 }
 
@@ -31,4 +38,15 @@ body {
 
 .CHnav-button:hover {
   background-color: #0729b3;
+}
+
+.CHcontent-container {
+  padding: 10px;
+  background-color: #4785b846;
+  flex: 1;
+}
+
+.CHcontent {
+  display: inline-flex;
+  flex: 1;
 }

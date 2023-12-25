@@ -11,14 +11,20 @@ function ClientHome() {
     <div className="client-home-container">
       <Header />
 
-      <div className="CHvertical-navbar">
-        <button className="CHnav-button">Change Account Info</button>
-        <button className="CHnav-button">Account Info</button>
-        <button className="CHnav-button">Transfer</button>
-        <button className="CHnav-button">Change Password</button>
-        <button className="CHnav-button">Transaction History</button>
-        <button className="CHnav-button">Loan Request</button>
-        <button className="CHnav-button">Loan Payment</button>
+      <div className="CHcontainer">
+        <div className="CHvertical-navbar">
+          <button className="CHnav-button">Change Account Info</button>
+          <button className="CHnav-button">Account Info</button>
+          <button className="CHnav-button">Transfer</button>
+          <button className="CHnav-button">Change Password</button>
+          <button className="CHnav-button">Transaction History</button>
+          <button className="CHnav-button">Loan Request</button>
+          <button className="CHnav-button">Loan Payment</button>
+        </div>
+
+        <div className="CHcontent-container">
+          <div className="CHcontent">Hello</div>
+        </div>
       </div>
     </div>
   );
