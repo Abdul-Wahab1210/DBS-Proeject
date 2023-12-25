@@ -19,4 +19,12 @@ body {
   .navbar-container {
     color: blue;
     font-size: larger;
+    margin-left: 20px;
+  }
+
+  .navbar-container :hover {
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    margin-left: 50px;
   }
