@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .EHvertical-navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 10px;
+    justify-content: top;
+    align-items: center;
+    max-width: fit-content;
+    height:90vh;
+    transition: max-width 0.5s ease;
+  }
+  
+  .EHnav-button {
+    color: white;
+    border-radius: 12px;
+    background-color: #000000;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .EHnav-button:hover {
+    background-color: #0729b3;
+  }

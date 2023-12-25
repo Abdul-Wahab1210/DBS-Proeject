@@ -5,6 +5,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .vertical-navbar {
@@ -118,6 +119,12 @@ body {
 }
 
 .reg-form input {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.reg-form select {  
   width: 90%; 
   padding: 8px;
   margin-bottom: 16px;
