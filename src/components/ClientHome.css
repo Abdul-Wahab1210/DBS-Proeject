@@ -41,12 +41,98 @@ body {
 }
 
 .CHcontent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   padding: 10px;
   background-color: #4785b846;
   flex: 1;
 }
 
+.transaction-log-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: fit-content;
+  max-height: 45%;
+  overflow-y: auto;
+}
+
+.transaction-log-table th, .transaction-log-table td {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+.transaction-log-table th {
+  background-color: #1e87bb;
+  position: sticky;
+  top: 0;
+}
+
 .CHcontent {
-  display: inline-flex;
   flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.change-password-form,
+.transfer-form,
+.loan-request-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.change-password-form label,
+.transfer-form label,
+.loan-request-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.change-password-form label input,
+.transfer-form label input,
+.loan-request-form input {
+  margin-top: 5px;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.account-info p {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.account-info p strong {
+  margin-right: 5px;
+}
+
+.account-info-button,
+.change-password-form button,
+.transfer-form button,
+.loan-request-form button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.account-info-button:hover,
+.change-password-form button:hover,
+.transfer-form button:hover,
+.loan-request-form button:hover {
+  background-color: #0729b3;
 }
