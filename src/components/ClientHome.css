@@ -50,20 +50,25 @@ body {
   background-color: rgb(103, 126, 146);
 }
 
-.transaction-log-table {
+.transaction-log-table,
+.loan-payment-table {
   margin-top: 20px;
   border-collapse: collapse;
   width: fit-content;
-  max-height: 45%;
+  max-height: 55%;
   overflow-y: auto;
 }
 
-.transaction-log-table th, .transaction-log-table td {
+.transaction-log-table th, .transaction-log-table td,
+.loan-payment-table th, .loan-payment-table td {
   border: 1px solid #000000;
   padding: 8px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.transaction-log-table th {
+.transaction-log-table th,
+.loan-payment-table th {
   background-color: #1e87bb;
   position: sticky;
   top: 0;
@@ -73,7 +78,6 @@ body {
   flex: 1;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: flex-start;
 }
 
@@ -130,9 +134,21 @@ body {
   margin-top: 10px;
 }
 
+.loan-payment-form button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .account-info-button:hover,
 .change-password-form button:hover,
 .transfer-form button:hover,
-.loan-request-form button:hover {
+.loan-request-form button:hover,
+.loan-payment-form button:hover {
   background-color: #0729b3;
 }

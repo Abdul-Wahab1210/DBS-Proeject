@@ -332,6 +332,7 @@ function EmployeeHome() {
             </label>
           </div>
           <button type="submit">Approve</button>
+          <button type="submit">Reject</button>
         </form>
       </div>
     </div>
