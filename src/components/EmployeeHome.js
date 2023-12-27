@@ -12,10 +12,13 @@ function EmployeeHome() {
   const [showLoanApplications, setShowLoanApplications] = useState(false); // Add state for loan applications
   const [showFreezeAccountForm, setShowFreezeAccountForm] = useState(false); // Add state for freezing account
   const [showTransactionLogForm, setShowTransactionLogForm] = useState(false); // Add state for customer transaction log
+  const [showLoanInfo, setshowLoanInfo] = useState(false);
+  const [retrievedAccountInfo, setRetrievedAccountInfo] = useState(null);
   const [formValues, setFormValues] = useState({
     accountId: '',
     amount: '',
-    loanId: '', // Add loanId to form values
+    loanId: '',
+    pin:'',
   });
   const [freezeAccountFormValues, setFreezeAccountFormValues] = useState({
     accountId: '',
@@ -30,8 +33,20 @@ function EmployeeHome() {
     loanId: '',
   });
 
+  const [loanInfo, setLoanInfo] = useState([]);
+
   const [loanApplications, setLoanApplications] = useState([
     // Example loan application data
+    { loanId: '1', accountId: '12345', amount: 5000, duration: 12 },
+    { loanId: '2', accountId: '67890', amount: 8000, duration: 24 },
+    { loanId: '3', accountId: '12345', amount: 5000, duration: 12 },
+    { loanId: '4', accountId: '67890', amount: 8000, duration: 24 },
+    { loanId: '5', accountId: '12345', amount: 5000, duration: 12 },
+    { loanId: '6', accountId: '67890', amount: 8000, duration: 24 },
+    { loanId: '7', accountId: '12345', amount: 5000, duration: 12 },
+    { loanId: '8', accountId: '67890', amount: 8000, duration: 24 },
+    { loanId: '9', accountId: '12345', amount: 5000, duration: 12 },
+    { loanId: '10', accountId: '67890', amount: 8000, duration: 24 },
     { loanId: '1', accountId: '12345', amount: 5000, duration: 12 },
     { loanId: '2', accountId: '67890', amount: 8000, duration: 24 },
     { loanId: '3', accountId: '12345', amount: 5000, duration: 12 },
@@ -46,6 +61,8 @@ function EmployeeHome() {
   ]);
 
   const handleDepositButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowDepositForm(true);
     setShowWithdrawForm(false);
     setShowRetrieveInfoForm(false); // Hide other forms
@@ -55,6 +72,8 @@ function EmployeeHome() {
   };
 
   const handleWithdrawButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowWithdrawForm(true);
     setShowDepositForm(false);
     setShowRetrieveInfoForm(false); // Hide other forms
@@ -64,6 +83,8 @@ function EmployeeHome() {
   };
 
   const handleRetrieveInfoButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowRetrieveInfoForm(true);
     setShowDepositForm(false);
     setShowWithdrawForm(false);
@@ -73,6 +94,8 @@ function EmployeeHome() {
   };
 
   const handleLoanApplicationsButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowLoanApplications(true);
     setShowDepositForm(false);
     setShowWithdrawForm(false);
@@ -82,6 +105,8 @@ function EmployeeHome() {
   };
 
   const handleFreezeAccountButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowFreezeAccountForm(true);
     setShowDepositForm(false);
     setShowWithdrawForm(false);
@@ -91,6 +116,8 @@ function EmployeeHome() {
   };
 
   const handleTransactionLogButtonClick = () => {
+    setRetrievedAccountInfo(false);
+    setshowLoanInfo(false);
     setShowTransactionLogForm(true);
     setShowDepositForm(false);
     setShowWithdrawForm(false);
@@ -98,6 +125,50 @@ function EmployeeHome() {
     setShowLoanApplications(false);
     setShowFreezeAccountForm(false);
   };
+
+  const handleLoanInfoClick = () => {
+    setLoanInfo(
+      [{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },
+    { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+  },
+  { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+},
+{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },
+    { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+  },
+  { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+},
+{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },
+    { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+  },
+  { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+},
+{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },
+    { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+  },
+  { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+},
+{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },
+    { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+  },
+  { loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+},
+{ loanId: '101', amount: 10000, interestRate: 5, dateApproved: '2023-01-01', returnDate: '2023-12-31', accountId: '12345', paymentStatus: 'Paid' 
+    },])
+    setRetrievedAccountInfo(false);
+    setShowTransactionLogForm(false);
+    setshowLoanInfo(true);
+    setShowDepositForm(false);
+    setShowWithdrawForm(false);
+    setShowRetrieveInfoForm(false);
+    setShowLoanApplications(false);
+    setShowFreezeAccountForm(false);
+  }
 
   const handleFormInputChange = (e) => {
     const { name, value } = e.target;
@@ -116,6 +187,7 @@ function EmployeeHome() {
       accountId: '',
       amount: '',
       loanId: '',
+      pin:'',
     });
   };
 
@@ -184,6 +256,26 @@ function EmployeeHome() {
     });
   };
 
+  const handleRetrieveInfoSubmit = (e) => {
+    setShowRetrieveInfoForm(false);
+    e.preventDefault();
+    // Simulate fetching account info from a server
+    const fetchedInfo = {
+      accountId: formValues.accountId,
+      contact: '123-456-7890', // Replace with actual data
+      email: 'example@email.com', // Replace with actual data
+    };
+    // Update the state with the retrieved account info
+    setRetrievedAccountInfo(fetchedInfo);
+    // Reset form values
+    setFormValues({
+      accountId: '',
+      amount: '',
+      loanId: '',
+      pin: '',
+    });
+  };
+
   return (
     <div className="Employee-home-container">
       <Header />
@@ -207,6 +299,7 @@ function EmployeeHome() {
           <button className="EHnav-button" onClick={handleTransactionLogButtonClick}>
             Customer Transaction Log
           </button>
+          <button className="EHnav-button" onClick={handleLoanInfoClick}>Loans Information</button>
         </div>
 
         <div className="EHcontent-container">
@@ -266,6 +359,18 @@ function EmployeeHome() {
                       required
                     />
                   </label>
+                  <div className="form-group">
+                  <label>
+                    <span>Pin:</span>
+                    <input
+                      type="password"
+                      name="pin"
+                      value={formValues.pin}
+                      onChange={handleFormInputChange}
+                      required
+                    />
+                  </label>
+                  </div>
                 </div>
                 <button type="submit">Withdraw</button>
               </form>
@@ -273,7 +378,7 @@ function EmployeeHome() {
 
             {/* Retrieve Account Info Form */}
             {showRetrieveInfoForm && (
-              <form onSubmit={handleFormSubmit} className="retrieve-info-form">
+              <form onSubmit={handleRetrieveInfoSubmit} className="retrieve-info-form">
                 <div className="form-group">
                   <label>
                     <span>Account ID:</span>
@@ -290,9 +395,22 @@ function EmployeeHome() {
               </form>
             )}
 
+            {retrievedAccountInfo && (
+              <div className="retrieved-info">
+                <h2>Retrieved Account Info</h2>
+                <p>Account ID: {retrievedAccountInfo.accountId}</p>
+                <p>Contact: {retrievedAccountInfo.contact}</p>
+                <p>Email: {retrievedAccountInfo.email}</p>
+                <div className="Rib">
+                  <button onClick={handleRetrieveInfoButtonClick}>Go Back</button>
+                </div>
+              </div>
+            )}
+
+
             {/* Loan Applications Form */}
             {showLoanApplications && (
-  <div className="EHcontent-container">
+  <div className="EHcontenttwo-container">
     <div className="EHcontent">
       <div className="loan-applications-table">
         <table>
@@ -331,8 +449,10 @@ function EmployeeHome() {
               />
             </label>
           </div>
+          <div className="laf-button-container">
           <button type="submit">Approve</button>
           <button type="submit">Reject</button>
+          </div>
         </form>
       </div>
     </div>
@@ -368,7 +488,6 @@ function EmployeeHome() {
                     </option>
                     <option value="Fraud">Fraud</option>
                     <option value="LostCard">Lost Card</option>
-                    {/* Add more reasons as needed */}
                   </select>
                 </label>
               </div>
@@ -376,7 +495,6 @@ function EmployeeHome() {
             </form>
           )}
 
-          {/* Customer Transaction Log Form */}
           {showTransactionLogForm && (
             <form onSubmit={handleTransactionLogSubmit} className="transaction-log-form">
               <div className="form-group">
@@ -394,7 +512,37 @@ function EmployeeHome() {
               <button type="submit">View Transaction Log</button>
             </form>
           )}
-        
+
+          {showLoanInfo && (
+            <div className="loan-info-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loan ID</th>
+                  <th>Amount</th>
+                  <th>Interest Rate</th>
+                  <th>Date Approved</th>
+                  <th>Return Date</th>
+                  <th>Account ID</th>
+                  <th>Payment Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {loanInfo.map((info) => (
+                  <tr key={info.loanId}>
+                    <td>{info.loanId}</td>
+                    <td>{info.amount}</td>
+                    <td>{info.interestRate}</td>
+                    <td>{info.dateApproved}</td>
+                    <td>{info.returnDate}</td>
+                    <td>{info.accountId}</td>
+                    <td>{info.paymentStatus}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}    
           </div>
         </div>
       </div>

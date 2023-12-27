@@ -31,12 +31,12 @@ function ClientHome() {
     branchID:'sad',
   }]);
 
-const [LoanPendings, setLoanPendings] = useState([{
-  loanid:'',
-  amount:'',
-  dateapproved:'',
-  returndate:'',
-}])
+  const [LoanPendings, setLoanPendings] = useState([{
+    loanid:'',
+    amount:'',
+    dateapproved:'',
+    returndate:'',
+  }])
   
   const [transactionLogData, settransactionLogData] = useState({
     transactionid:'',
@@ -56,37 +56,8 @@ const [LoanPendings, setLoanPendings] = useState([{
 
   const [paymentvalues, setPaymentValues] = useState ({
     loadid:'',
+    amount:'',
   })
-
-
-  // const transactionLogData = [
-  //   { receiverAccountId: '123456', amount: 100, purpose: 'Payment' },
-  //   { receiverAccountId: '789012', amount: 50, purpose: 'Purchase' },
-  //   { receiverAccountId: '345678', amount: 75, purpose: 'Transfer' },
-  //   { receiverAccountId: '901234', amount: 120, purpose: 'Payment' },
-  //   { receiverAccountId: '567890', amount: 30, purpose: 'Purchase' },
-  //   { receiverAccountId: '234567', amount: 90, purpose: 'Transfer' },
-  //   { receiverAccountId: '890123', amount: 40, purpose: 'Payment' },
-  //   { receiverAccountId: '456789', amount: 60, purpose: 'Purchase' },
-  //   { receiverAccountId: '123890', amount: 110, purpose: 'Transfer' },
-  //   { receiverAccountId: '678901', amount: 70, purpose: 'Payment' },
-  //   { receiverAccountId: '345678', amount: 85, purpose: 'Purchase' },
-  //   { receiverAccountId: '901456', amount: 95, purpose: 'Transfer' },
-  //   { receiverAccountId: '567123', amount: 55, purpose: 'Payment' },
-  //   { receiverAccountId: '234890', amount: 65, purpose: 'Purchase' },
-  //   { receiverAccountId: '890456', amount: 105, purpose: 'Transfer' },
-  //   { receiverAccountId: '456123', amount: 45, purpose: 'Payment' },
-  //   { receiverAccountId: '123567', amount: 80, purpose: 'Purchase' },
-  //   { receiverAccountId: '789456', amount: 115, purpose: 'Transfer' },
-  //   { receiverAccountId: '234234', amount: 25, purpose: 'Payment' },
-  //   { receiverAccountId: '567567', amount: 120, purpose: 'Purchase' },
-  //   { receiverAccountId: '890890', amount: 35, purpose: 'Transfer' },
-  //   { receiverAccountId: '123123', amount: 80, purpose: 'Payment' },
-  //   { receiverAccountId: '456456', amount: 110, purpose: 'Purchase' },
-  //   { receiverAccountId: '789789', amount: 25, purpose: 'Transfer' },
-  // ];
-
-    
     
   const handleTransactionLogClick = () => {
     settransactionLogData([
@@ -688,8 +659,18 @@ const [LoanPendings, setLoanPendings] = useState([{
                       required
                     />
                   </label>
+                  <label>
+                    <span>Amount:</span>
+                    <input
+                      type="text"
+                      name="values"
+                      value={paymentvalues.amount}
+                      onChange={handlePaymentInputChange}
+                      required
+                    />
+                  </label>
                 </div>
-                <button type="submit">Approve</button>
+                <button type="submit">Pay</button>
               </form>
             </div>
           </div>
@@ -784,13 +765,4 @@ const [LoanPendings, setLoanPendings] = useState([{
   );
 }
 
-export default ClientHome;
-
-
-
-
-
-
-
-    
- 
+export default ClientHome; 

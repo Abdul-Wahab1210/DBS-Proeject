@@ -92,16 +92,19 @@ body {
 
 .change-password-form label,
 .transfer-form label,
-.loan-request-form label {
+.loan-request-form label,
+.loan-payment-form label {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   align-items: flex-start;
+  margin-left: 20px;
 }
 
 .change-password-form label input,
 .transfer-form label input,
-.loan-request-form input {
+.loan-request-form input,
+.loan-payment-form input {
   margin-top: 5px;
 }
 
@@ -124,7 +127,7 @@ body {
 .account-info-button,
 .change-password-form button,
 .transfer-form button,
-.loan-request-form button {
+.loan-request-form button{
   background-color: black;
   color: white;
   padding: 10px;
@@ -141,8 +144,8 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 .account-info-button:hover,
