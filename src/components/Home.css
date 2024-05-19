@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.vertical-navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: auto;
+  height: 10vh;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  color: white;
+  max-width: fit-content;
+  border-radius: 12px;
+  background-color: #000000;
+  border: none;
+  padding: 8px;
+  margin: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid rgb(188, 188, 188);
+}
+
+.nav-button:hover {
+  background-color: #0729b3;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  height: 80vh;
+  background-color: aqua;
+  align-items: start;
+  justify-content: center;
+  background-image: url("C:\\Users\\Ghouri\\Desktop\\DBS-Project\\src\\images\\Bank2.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.login button {
+  padding: 10px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: larger;
+  background-color: transparent;
+  border-radius: 12px;
+  border: none;
+  color: white;
+}
+
+.login button:hover {
+  background-color: #0729b3;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(94, 94, 94, 0.934);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background: rgb(31, 125, 144);
+  width: 25vw;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form label {
+  margin-bottom: 8px;
+}
+
+.login-form input {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.login-form button {
+  color: black;
+  margin-right: 10px;
+}
+
+.reg-form {
+  background: rgb(31, 125, 144);
+  width: 25vw;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reg-form label {
+  margin-bottom: 8px;
+}
+
+.reg-form input {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.reg-form select {  
+  width: 90%; 
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.reg-form button {
+  color: black;
+  margin-right: 10px;
+}
